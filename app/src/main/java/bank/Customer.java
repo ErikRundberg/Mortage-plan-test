@@ -4,6 +4,21 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * Customer class
+ * 
+ * The Customer class stores information about the customer and
+ * has two methods, printCustomerInfo and calculateMonthlyMortgage.
+ * 
+ * printCustomerInfo prints all the information about the customer.
+ * 
+ * calculateMonthlyMortgage calculates the customers monthly mortgage
+ * and stores it in the customer variable customerMonthlyMortgage.
+ * 
+ * @author  Erik Rundberg
+ * @version 1.0
+ * @since   2022-02-08
+ */
 public class Customer {
     private int prospectNumber;             // Customer's prospect number
     private final String customerName;      // Customer's name
@@ -14,7 +29,12 @@ public class Customer {
 
     private static int totalProspects = 1;  // Static number that increments by 1 each time a Customer is created
 
-    // Constructor that initializes Customer object
+    /**
+     * This constructor creates an instance of the Customer class
+     * recieved by CustomerFromFile.getCustomersList().
+     * The Customer.totalProspects gets incremented by each instance.
+     * @param customerInformation [Customer,Total loan,Interest,Years]
+     */
     Customer(ArrayList<String> customerInformation) {
         this.customerName = customerInformation.get(0);
         this.customerLoan = Double.parseDouble(customerInformation.get(1));
@@ -26,7 +46,10 @@ public class Customer {
         Customer.totalProspects++;
     }
 
-    // Prints customer's info
+    /**
+     * This method prints out all of the information
+     * stored in the Customer instance.
+     */
     public void printCustomerInfo() {
         // Calculates monthly mortgage if it hasn't been done before
         if (this.customerMonthlyMortgage == 0) {
@@ -34,13 +57,20 @@ public class Customer {
         }
         System.out.println("Prospect #" + this.prospectNumber);
         System.out.println("Name: " + this.customerName);
-        System.out.println("Total loan: " + this.customerLoan);
+        System.out.println("Total loan (\u20AC): " + this.customerLoan);
         System.out.println("Interest rate (%): " + this.customerInterest);
         System.out.println("Total loan period (years): " + this.customerYears);
         System.out.println("Current monthly mortgage: " + this.customerMonthlyMortgage);
     }
 
-    // Calculates customer's monthly mortgage and store it in this.customerMonthlyMortgage
+    /**
+     * This method uses the variables
+     * customerLoan
+     * customerInterest
+     * customerYears
+     * and calculates the monthly mortgage which
+     * gets stored in customerMonthlyMortgage
+     */
     public void calculateMonthlyMortgage() {
         /*
             Formula for fixed monthly payment

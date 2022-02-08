@@ -5,22 +5,40 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * CustomerFromFile class
+ * 
+ * The CustomerFromFile class opens up the file prospects.txt and
+ * returns all the customers in an ArrayList.
+ * 
+ * @author Erik Rundberg
+ * @version 1.0
+ * @since 2022-02-08
+ */
 public final class CustomerFromFile {
 
+    /**
+     * Utility class - Can't be instantiated
+     */
     private CustomerFromFile() {
         throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }
 
     /**
+     * Opens up the file prospects.txt, encodes it into UTF-8
+     * to support special characters such as é.
+     * Supports finding "," in fields if they're inside quotation
+     * marks and lastly returns it in an ArrayList.
      * 
-     * @return                  Returns ArrayList containing Customer objects
+     * @return Returns ArrayList containing Customer objects
+     * @exception FileNotFoundException on file missing error.
+     * @see FileNotFoundException
      */
     public static ArrayList<Customer> getCustomersList() {
         // List containing all customers as objects
         ArrayList<Customer> customers = new ArrayList<>();
 
         try {
-
             // Load file from /resources folder
             File customersFile = new File(ClassLoader.getSystemClassLoader().getResource("./prospects.txt").getFile());
             // Use charset UTF-8 because of "åäö" and "é"
@@ -29,25 +47,24 @@ public final class CustomerFromFile {
             customersScanner.nextLine();
             // Go through file line-by-line, create customers and add to ArrayList customers
             while (customersScanner.hasNextLine()) {
-                String fileLine = customersScanner.nextLine();
-
+                String currentLine = customersScanner.nextLine();
                 // Check for empty or "." and skip the line
-                if (fileLine.equals("") || fileLine.equals(".")) {
+                if (currentLine.equals("") || currentLine.equals(".")) {
                     continue;
                 }
 
-                // Creates an ArrayList so commas inbetween citation marks gets included
+                // Checks for commas inbetween citation marks so they get included
                 ArrayList<String> result = new ArrayList<>();
                 int start = 0;
                 boolean inQuotes = false;
-                for (int current = 0; current < fileLine.length(); current++) {
-                    if (fileLine.charAt(current) == '\"') inQuotes = !inQuotes;
-                    else if (fileLine.charAt(current) == ',' && !inQuotes) {
-                        result.add(fileLine.substring(start, current));
+                for (int current = 0; current < currentLine.length(); current++) {
+                    if (currentLine.charAt(current) == '\"') inQuotes = !inQuotes;
+                    else if (currentLine.charAt(current) == ',' && !inQuotes) {
+                        result.add(currentLine.substring(start, current));
                         start = current + 1;
                     }
                 }
-                result.add(fileLine.substring(start));
+                result.add(currentLine.substring(start));
 
                 customers.add(new Customer(result));
             }
