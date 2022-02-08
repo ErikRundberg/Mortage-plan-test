@@ -1,3 +1,5 @@
+package bank;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -7,17 +9,17 @@ public class CustomerFromFile {
 
     /**
      * 
-     * @param directoryPath     Path to file containing customer information
      * @return                  Returns ArrayList containing Customer objects
      */
-    public static ArrayList<Customer> getCustomersList(String directoryPath) {
+    public static ArrayList<Customer> getCustomersList() {
         // List containing all customers as objects
         ArrayList<Customer> customers = new ArrayList<>();
 
         try {
-            File customersFile = new File(directoryPath);
+            
+            File customersFile = new File(ClassLoader.getSystemClassLoader().getResource("./prospects.txt").getFile());
             // Use charset UTF-8 because of "åäö" and "é"
-            Scanner customersScanner = new Scanner(customersFile, "UTF-8");
+            Scanner customersScanner = new Scanner(customersFile);
 
             // Get rid of header containing CSV-information
             customersScanner.nextLine();
@@ -55,7 +57,7 @@ public class CustomerFromFile {
     }
 
     public static void main(String[] args) {
-        ArrayList<Customer> customers = getCustomersList("prospects.txt");
+        ArrayList<Customer> customers = getCustomersList();
 
         customers.get(0).printCustomer();
     }
