@@ -9,9 +9,8 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        // Create a list of customers from file
+        // Create a list of customers from the file "src/main/resources/prospects.txt"
         ArrayList<Customer> customersList = CustomerFromFile.getCustomersList();
-
 
         // Iterate through customers list printing out customer info and monthly payment
         for (Customer customer : customersList) {

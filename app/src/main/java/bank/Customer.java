@@ -1,9 +1,7 @@
 package bank;
 
-import java.nio.charset.StandardCharsets;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.Locale;
 
 public class Customer {
@@ -23,10 +21,11 @@ public class Customer {
 
     public void printCustomer() {
         // Prints customer's info
-        System.out.println(this.customerName);
-        System.out.println(this.customerLoan);
-        System.out.println(this.customerInterest);
-        System.out.println(this.customerYears);
+        System.out.println("Name: " + this.customerName);
+        System.out.println("Total loan: " + this.customerLoan);
+        System.out.println("Interest rate (%): " + this.customerInterest);
+        System.out.println("Total loan period (years): " + this.customerYears);
+        System.out.println("Current monthly mortgage: " + this.customerMonthlyMortgage);
     }
 
     public void calculateMonthlyMortgage() {
@@ -62,16 +61,14 @@ public class Customer {
         // currencyFormatter according to Locale Finland
         // Used to get nice formatting on currency
         NumberFormat cF = NumberFormat.getCurrencyInstance(locale);
-        String customerInformation = String.format("€£$ \u20ac %s wants to borrow %s for a period of %d years and pay %s each month",this.customerName, cF.format(this.customerLoan), this.customerYears, cF.format(this.customerMonthlyMortgage));
-        byte[] bytes = customerInformation.getBytes(StandardCharsets.UTF_8);
-        String utf8EncondedString = new String(bytes, StandardCharsets.UTF_8);
-        System.out.println(utf8EncondedString);
+        String customerInformation = String.format("%s wants to borrow %s for a period of %d years and pay %s each month",this.customerName, cF.format(this.customerLoan), this.customerYears, cF.format(this.customerMonthlyMortgage));
+        System.out.println(customerInformation);
     }
 
     public static void main(String[] args) {
         ArrayList<Customer> customers = CustomerFromFile.getCustomersList();
 
-        customers.get(0).presentCustomer();
+        customers.get(3).printCustomer();
     }
 }
 

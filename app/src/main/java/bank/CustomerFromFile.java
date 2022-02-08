@@ -19,7 +19,7 @@ public class CustomerFromFile {
             
             File customersFile = new File(ClassLoader.getSystemClassLoader().getResource("./prospects.txt").getFile());
             // Use charset UTF-8 because of "åäö" and "é"
-            Scanner customersScanner = new Scanner(customersFile);
+            Scanner customersScanner = new Scanner(customersFile, "UTF-8");
 
             // Get rid of header containing CSV-information
             customersScanner.nextLine();
