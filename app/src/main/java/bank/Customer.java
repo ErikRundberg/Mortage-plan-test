@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class Customer {
+    private int prospectNumber;             // Customer's prospect number
     private final String customerName;      // Customer's name
     private final double customerLoan;      // Customer's total loan amount
     private final double customerInterest;  // Customer's interest rate
     private final int customerYears;        // Customer's loan period in years
-    private double customerMonthlyMortgage;     // Customer's monthly mortgage cost (Calculated through the method Customer.calculateMonthlyMortgage)
+    private double customerMonthlyMortgage; // Customer's monthly mortgage cost (Calculated through the method Customer.calculateMonthlyMortgage)
+
+    private static int totalProspects = 1;  // Static number that increments by 1 each time a Customer is created
 
     // Constructor that initializes Customer object
     Customer(ArrayList<String> customerInformation) {
@@ -17,10 +20,19 @@ public class Customer {
         this.customerLoan = Double.parseDouble(customerInformation.get(1));
         this.customerInterest = Double.parseDouble(customerInformation.get(2));
         this.customerYears = Integer.parseInt(customerInformation.get(3));
+
+        // Customer gets given the latest number and then increments by 1
+        this.prospectNumber = Customer.totalProspects;
+        Customer.totalProspects++;
     }
 
+    // Prints customer's info
     public void printCustomerInfo() {
-        // Prints customer's info
+        // Calculates monthly mortgage if it hasn't been done before
+        if (this.customerMonthlyMortgage == 0) {
+            calculateMonthlyMortgage();
+        }
+        System.out.println("Prospect #" + this.prospectNumber);
         System.out.println("Name: " + this.customerName);
         System.out.println("Total loan: " + this.customerLoan);
         System.out.println("Interest rate (%): " + this.customerInterest);
@@ -28,6 +40,7 @@ public class Customer {
         System.out.println("Current monthly mortgage: " + this.customerMonthlyMortgage);
     }
 
+    // Calculates customer's monthly mortgage and store it in this.customerMonthlyMortgage
     public void calculateMonthlyMortgage() {
         /*
             Formula for fixed monthly payment
@@ -57,11 +70,12 @@ public class Customer {
     public void presentCustomer() {
         this.calculateMonthlyMortgage();
 
-        Locale locale = new Locale("fi", "FI");
-        // currencyFormatter according to Locale Finland
+        // Currency formatter according to Locale Finland
         // Used to get nice formatting on currency
+        Locale locale = new Locale("fi", "FI");
         NumberFormat cF = NumberFormat.getCurrencyInstance(locale);
-        String customerInformation = String.format("%s wants to borrow %s for a period of %d years and pay %s each month",this.customerName, cF.format(this.customerLoan), this.customerYears, cF.format(this.customerMonthlyMortgage));
+
+        String customerInformation = String.format("Prospect %d: %s wants to borrow %s for a period of %d years and pay %s each month",this.prospectNumber, this.customerName, cF.format(this.customerLoan), this.customerYears, cF.format(this.customerMonthlyMortgage));
         System.out.println(customerInformation);
     }
 }
