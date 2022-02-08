@@ -18,7 +18,7 @@ Be in root folder
 * Testing
 * Docker
 * Web interface (Spring Boot)
-~~* Gradle~~
+* ~~Gradle~~
 
 ## Choices
 
