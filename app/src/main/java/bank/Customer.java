@@ -19,7 +19,7 @@ public class Customer {
         this.customerYears = Integer.parseInt(customerInformation.get(3));
     }
 
-    public void printCustomer() {
+    public void printCustomerInfo() {
         // Prints customer's info
         System.out.println("Name: " + this.customerName);
         System.out.println("Total loan: " + this.customerLoan);
@@ -63,12 +63,6 @@ public class Customer {
         NumberFormat cF = NumberFormat.getCurrencyInstance(locale);
         String customerInformation = String.format("%s wants to borrow %s for a period of %d years and pay %s each month",this.customerName, cF.format(this.customerLoan), this.customerYears, cF.format(this.customerMonthlyMortgage));
         System.out.println(customerInformation);
-    }
-
-    public static void main(String[] args) {
-        ArrayList<Customer> customers = CustomerFromFile.getCustomersList();
-
-        customers.get(3).printCustomer();
     }
 }
 

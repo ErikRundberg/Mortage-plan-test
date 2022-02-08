@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CustomerFromFile {
+public final class CustomerFromFile {
+
+    private CustomerFromFile() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
+    }
 
     /**
      * 
@@ -16,15 +20,14 @@ public class CustomerFromFile {
         ArrayList<Customer> customers = new ArrayList<>();
 
         try {
-            
+
+            // Load file from /resources folder
             File customersFile = new File(ClassLoader.getSystemClassLoader().getResource("./prospects.txt").getFile());
             // Use charset UTF-8 because of "åäö" and "é"
             Scanner customersScanner = new Scanner(customersFile, "UTF-8");
-
             // Get rid of header containing CSV-information
             customersScanner.nextLine();
-
-            // Go through file, create customers and add to ArrayList customers
+            // Go through file line-by-line, create customers and add to ArrayList customers
             while (customersScanner.hasNextLine()) {
                 String fileLine = customersScanner.nextLine();
 
@@ -54,11 +57,5 @@ public class CustomerFromFile {
             e.printStackTrace();
         }
         return customers;
-    }
-
-    public static void main(String[] args) {
-        ArrayList<Customer> customers = getCustomersList();
-
-        customers.get(0).printCustomer();
     }
 }
