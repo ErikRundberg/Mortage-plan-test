@@ -9,9 +9,22 @@ To run the application do the following:
 Make sure you have a version of Java installed
 Be in root folder
 
+### Run program
 ```bash
 ./gradlew run
 ```
+
+### Run server
+```bash
+./gradlew bootRun
+```
+
+Go to: http://localhost:8080
+
+#### Stuck at 80%
+It is normal to get stuck at 80%
+
+https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle
 
 ## Future plans
 
