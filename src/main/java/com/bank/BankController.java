@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BankController {
@@ -24,7 +23,5 @@ public class BankController {
         model.addAttribute("customers", customerPresentations);
 
 		return "customer";
-		// return String.join("\r\n", customerPresentations);
-		// return String.format("Hey %s!", "Yo");
 	}
 }

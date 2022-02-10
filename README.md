@@ -9,12 +9,12 @@ To run the application do the following:
 Make sure you have a version of Java installed
 Be in root folder
 
-### Run program
+### Run program (Terminal)
 ```bash
-./gradlew run
+./gradlew cli
 ```
 
-### Run server
+### Run server (Browser)
 ```bash
 ./gradlew bootRun
 ```
