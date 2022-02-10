@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <p th:text="'Hello, ' + ${customers} + '!'" />
+    <ul th:each="customer: ${customers}">
+        <li th:text="${customer}"></li>
+    </ul>
 </body>
 
 </html>

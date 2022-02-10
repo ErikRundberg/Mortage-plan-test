@@ -1,6 +1,7 @@
 package com.bank;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,10 @@ public class BankController {
 			customerPresentations.add(customer.presentCustomerString());
 		}
 
-        model.addAttribute("customers", customerPresentations);
+		// Create Iterator for ArrayList customerPresentations
+		Iterator<String> customerIterator = customerPresentations.iterator();
+
+        model.addAttribute("customers", customerIterator);
 
 		return "customer";
 	}
