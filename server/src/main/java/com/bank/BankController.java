@@ -1,9 +1,6 @@
-package com.bank.servingwebcontent;
+package com.bank;
 
 import java.util.ArrayList;
-
-import com.bank.Customer;
-import com.bank.CustomerFromFile;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
