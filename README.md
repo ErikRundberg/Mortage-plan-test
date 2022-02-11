@@ -39,7 +39,7 @@ Go to: http://localhost:8080
 
 > It's normal to get stuck at ~80%, the server is still running.
 >
->> https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle
+> https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle
 
 ## Future plans
 
