@@ -10,11 +10,27 @@ Make sure you have a version of Java installed
 Be in root folder
 
 ### Run program (Terminal)
+
+#### CMD
+
+```cmd
+gradlew cli
+```
+#### UNIX
+
 ```bash
 ./gradlew cli
 ```
 
 ### Run server (Browser)
+
+#### CMD
+
+```cmd
+gradlew bootRun
+```
+#### UNIX
+
 ```bash
 ./gradlew bootRun
 ```
@@ -46,3 +62,6 @@ I chose Gradle over Maven mainly for their incremental build which makes rebuild
 Gradle also uses codebased build scripts instead of XML-files which is easier.
 
 Overall Gradle outperforms Maven.
+
+## Current bugs
+`gradle/wrapper/gradle-wrapper.jar` doesn't get pushed to git, check .gitignore
