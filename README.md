@@ -9,9 +9,9 @@ The application creates Customers from text file and calculates all the customer
 * Bootstrap
 
 ## Installation
-To run the application do the following:
-Make sure you have a version of Java installed
-Be in root folder
+To run the application do the following:  
+Make sure you have a version of Java installed  
+Be in root folder  
 
 ### Run program (Terminal)
 
