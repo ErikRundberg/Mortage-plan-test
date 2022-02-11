@@ -49,7 +49,8 @@ Go to: http://localhost:8080
 
 * Testing
 * Docker
-* Web interface (Spring Boot)
+* Amazon AWS
+* ~~Web interface (Spring Boot)~~
 * ~~Gradle~~
 
 ## Choices
