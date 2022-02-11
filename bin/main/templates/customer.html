@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Bank - Mortgage</title>
@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <p th:text="'Hello, ' + ${customers} + '!'" />
+    <ul th:each="customer: ${customers}">
+        <li th:text="${customer}"></li>
+    </ul>
 </body>
 
 </html>
