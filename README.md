@@ -2,7 +2,11 @@
 
 The application creates Customers from a text file and calculates the customers' monthly mortage cost and presents it.
 
-Written using Java / HTML.
+## Technologies
+* Java
+* Gradle
+* Spring Boot
+* Bootstrap
 
 ## Installation
 To run the application do the following:
