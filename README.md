@@ -61,6 +61,3 @@ I chose Gradle over Maven mainly for their incremental build which makes rebuild
 Gradle also uses codebased build scripts instead of XML-files which is easier.
 
 Overall Gradle outperforms Maven.
-
-## Current bugs
-`gradle/wrapper/gradle-wrapper.jar` doesn't get pushed to git, check .gitignore
