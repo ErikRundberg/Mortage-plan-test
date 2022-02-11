@@ -1,6 +1,7 @@
 # Mortage Plan code test
 
-The application creates Customers from a text file and calculates the customers' monthly mortage cost and presents it.
+The application creates Customers from text file and calculates all the customers' monthly mortgage cost and presents it.  
+The application works both on the web and in terminal.
 
 ## Technologies
 * Java
