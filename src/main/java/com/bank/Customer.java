@@ -1,9 +1,3 @@
-package com.bank;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Locale;
-
 /**
  * Customer class
  * 
@@ -19,6 +13,13 @@ import java.util.Locale;
  * @version 1.0
  * @since 2022-02-08
  */
+
+package com.bank;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class Customer {
     private int prospectNumber; // Customer's prospect number
     private final String customerName; // Customer's name
