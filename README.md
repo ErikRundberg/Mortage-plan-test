@@ -69,7 +69,7 @@ Go to: http://localhost:8080
 ### Name formatting from file
 I decided to keep `"Clarencé,Andersson"` as it was written instead of removing the quotation marks and the comma to show that I can handle them.
 
-I probably would've formatted it into `Clarencé Andersson` to keep it consistent with other entries in prospects.txt.
+In production I would have formatted it into `Clarencé Andersson` to keep it consistent with the other entries in prospects.txt, making it easier for database integration.
 
 ### Why Gradle?
 I chose Gradle over Maven mainly for their incremental build which makes rebuilding the application way faster as only changed files have to be rebuilt.
