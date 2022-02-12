@@ -17,12 +17,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CustomerFromFile {
+public class FileHandler {
 
     /**
      * Utility class - Can't be instantiated
      */
-    private CustomerFromFile() {
+    private FileHandler() {
         throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }
 
@@ -42,7 +42,7 @@ public class CustomerFromFile {
         ArrayList<Customer> customers = new ArrayList<>();
 
         // Load file prospects.txt from /resources folder
-        try (InputStream in = CustomerFromFile.class.getResourceAsStream("/prospects.txt")){
+        try (InputStream in = FileHandler.class.getResourceAsStream("/prospects.txt")){
             // Use charset UTF-8 because of "åäö" and "é"
             Scanner customersScanner = new Scanner(in, "UTF-8");
             // Get rid of header containing CSV-information
