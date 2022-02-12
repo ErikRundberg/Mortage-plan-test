@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BankController {
 	ArrayList<Customer> customersList = new ArrayList<>();
-	ArrayList<String> customerPresentations = new ArrayList<>();
 
 	/**
 	 * Method that gets called once on startup
@@ -29,11 +28,6 @@ public class BankController {
 	public void startUp() throws IOException {
 		// Create a list of customers from the file "src/main/resources/prospects.txt"
 		customersList = FileHandler.getCustomersList();
-
-		// Iterate through customers list printing out customer info and monthly payment
-		for (Customer customer : customersList) {
-			customerPresentations.add(customer.presentCustomerString());
-		}
 	}
 
 	/**
@@ -48,6 +42,13 @@ public class BankController {
 	 */
     @GetMapping("/")
 	public String index(Model model) {
+		ArrayList<String> customerPresentations = new ArrayList<>();
+
+		// Iterate through customers list printing out customer info and monthly payment
+		for (Customer customer : customersList) {
+			customerPresentations.add(customer.presentCustomerString());
+		}
+
 		// Create Iterator for ArrayList customerPresentations
 		Iterator<String> customerIterator = customerPresentations.iterator();
 
@@ -58,9 +59,6 @@ public class BankController {
 
 	@PostMapping("/calculate")
 	public String calculate(@RequestParam("name") String name, @RequestParam("loan") String loan, @RequestParam("interest") String interest, @RequestParam("years") String years, Model model) {
-		// Create Iterator for ArrayList customerPresentations
-		Iterator<String> customerIterator = customerPresentations.iterator();
-
 		// Create new Customer
 		ArrayList<String> tempCustomerInfo = new ArrayList<>();
 
@@ -71,11 +69,7 @@ public class BankController {
 
 		Customer tempCustomer = new Customer(tempCustomerInfo);
 		customersList.add(tempCustomer);
-		String calculationResult = tempCustomer.presentCustomerString().substring(12);
 
-		model.addAttribute("customers", customerIterator);
-		model.addAttribute("calculation", calculationResult);
-
-		return "customer";
+		return "redirect:/";
 	}
 }
