@@ -53,8 +53,8 @@ Go to: http://localhost:8080
 ## Future plans
 
 * Testing
-* Docker
 * Amazon AWS
+* ~~Docker~~
 * ~~Web interface (Spring Boot)~~
 * ~~Gradle~~
 
