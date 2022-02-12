@@ -1,3 +1,7 @@
+/**
+ * Controller with routing
+ */
+
 package com.bank;
 
 import java.io.IOException;
@@ -18,9 +22,9 @@ public class BankController {
 
 	/**
 	 * Method that gets called once on startup
-	 * Creates a list of Customers and then adds
-	 * all of the customers' presentations into
-	 * the ArrayList customerPresentations
+	 * Creates a list of all the Customers from
+	 * the file prospects.txt and adds them to
+	 * customersList.
 	 * @throws IOException
 	 * 
 	 */
@@ -57,6 +61,15 @@ public class BankController {
 		return "customer";
 	}
 
+	/**
+	 * 
+	 * @param name		Name of prospect
+	 * @param loan		Total loan amount
+	 * @param interest	Yearly interest
+	 * @param years		Loan period in years
+	 * @param model		Thymeleaf template model
+	 * @return			Redirects to Index ("/")
+	 */
 	@PostMapping("/calculate")
 	public String calculate(@RequestParam("name") String name, @RequestParam("loan") String loan, @RequestParam("interest") String interest, @RequestParam("years") String years, Model model) {
 		// Create new Customer
