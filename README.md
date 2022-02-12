@@ -33,7 +33,7 @@ The web version is also hosted on AWS.
 * AWS - Elastic Beanstalk
 
 ## Public Cloud Service (AWS)
-http://mortageplan-env.eba-jpr8vjbf.eu-north-1.elasticbeanstalk.com/  
+[Online Demo](http://mortageplan-env.eba-jpr8vjbf.eu-north-1.elasticbeanstalk.com/)  
 
 ## Installation
 
