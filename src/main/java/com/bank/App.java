@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) throws IOException{
         // Create a list of customers from the file "src/main/resources/prospects.txt"
-        ArrayList<Customer> customersList = CustomerFromFile.getCustomersList();
+        ArrayList<Customer> customersList = FileHandler.getCustomersList();
 
         // Iterate through customers list printing out customer info and monthly payment
         for (Customer customer : customersList) {

@@ -26,7 +26,7 @@ public class BankController {
 	@EventListener(ApplicationReadyEvent.class)
 	public void startUp() throws IOException {
 		// Create a list of customers from the file "src/main/resources/prospects.txt"
-		customersList = CustomerFromFile.getCustomersList();
+		customersList = FileHandler.getCustomersList();
 
 		// Iterate through customers list printing out customer info and monthly payment
 		for (Customer customer : customersList) {
