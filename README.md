@@ -4,19 +4,19 @@ The application creates Customers from text file and calculates all the customer
 
 ## Table of Contents  
 * [Technologies](https://github.com/Erru17/Mortage-plan-test#technologies)
-* Public Cloud Service (AWS)
-* Installation
-  * Run Program (Terminal)
-    * CMD (Windows)
-    * UNIX (Linux/Mac)
-  * Run Server
-    * CMD (Windows)
-    * UNIX (Linux/Mac)
-  * Docker Server
-* Future Plans
-* Choices
-  * Name formatting
-  * Why gradle?
+* [Public Cloud Service (AWS)](https://github.com/Erru17/Mortage-plan-test#public-cloud-service-aws)
+* [Installation](https://github.com/Erru17/Mortage-plan-test#installation)
+  * [Run Program (Terminal)](https://github.com/Erru17/Mortage-plan-test#run-program-terminal)
+    * [CMD (Windows)](https://github.com/Erru17/Mortage-plan-test#cmd-windows)
+    * [UNIX (Linux/Mac)](https://github.com/Erru17/Mortage-plan-test#unix-linuxmac)
+  * [Run Server (Browser)](https://github.com/Erru17/Mortage-plan-test#run-server-browser)
+    * [CMD (Windows)](https://github.com/Erru17/Mortage-plan-test#cmd-windows-1)
+    * [UNIX (Linux/Mac)](https://github.com/Erru17/Mortage-plan-test#unix-linuxmac-1)
+  * [Docker Server](https://github.com/Erru17/Mortage-plan-test#docker-server)
+* [Future Plans](https://github.com/Erru17/Mortage-plan-test#future-plans)
+* [Choices](https://github.com/Erru17/Mortage-plan-test#choices)
+  * [Name formatting](https://github.com/Erru17/Mortage-plan-test#name-formatting)
+  * [Why gradle?](https://github.com/Erru17/Mortage-plan-test#why-gradle)
 
 ## Technologies
 * Java
