@@ -13,8 +13,8 @@ import java.util.Scanner;
  * returns all the customers in an ArrayList.
  * 
  * @author Erik Rundberg
- * @version 1.0
- * @since 2022-02-08
+ * @version 1.1
+ * @since 2022-02-12
  */
 public class CustomerFromFile {
 

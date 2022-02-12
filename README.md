@@ -9,9 +9,14 @@ The application creates Customers from text file and calculates all the customer
 * Bootstrap
 
 ## Installation
-To run the application do the following:  
-Install Java JDK 8  
-Be in root folder  
+Be in root folder
+
+### Docker
+
+```docker
+docker-compose up server
+```
+Go to: http://localhost:8080
 
 ### Run program (Terminal)
 
