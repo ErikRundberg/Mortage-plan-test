@@ -4,6 +4,7 @@ The application creates Customers from text file and calculates all the customer
 
 ## Technologies
 * Java
+* HTML / CSS
 * Gradle
 * Spring Boot
 * Bootstrap
@@ -51,7 +52,7 @@ Go to: http://localhost:8080
 ### Docker Server
 
 ```docker
-docker-compose up server
+docker-compose up
 ```
 Go to: http://localhost:8080
 
