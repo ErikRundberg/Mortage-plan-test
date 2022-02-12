@@ -11,13 +11,6 @@ The application creates Customers from text file and calculates all the customer
 ## Installation
 Be in root folder
 
-### Docker
-
-```docker
-docker-compose up server
-```
-Go to: http://localhost:8080
-
 ### Run program (Terminal)
 
 #### CMD
@@ -49,6 +42,13 @@ Go to: http://localhost:8080
 > It's normal to get stuck at ~80%, the server is still running.
 >
 > https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle
+
+### Docker Server
+
+```docker
+docker-compose up server
+```
+Go to: http://localhost:8080
 
 ## Future plans
 
