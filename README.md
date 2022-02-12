@@ -7,6 +7,11 @@ The application creates Customers from text file and calculates all the customer
 * Gradle
 * Spring Boot
 * Bootstrap
+* Docker, Docker-compose
+* AWS - Elastic Beanstalk
+
+## AWS
+http://mortageplan-env.eba-jpr8vjbf.eu-north-1.elasticbeanstalk.com/  
 
 ## Installation
 Be in root folder
@@ -53,9 +58,9 @@ Go to: http://localhost:8080
 ## Future plans
 
 * Testing
-* Amazon AWS
+* Web interface
+* ~~Amazon AWS~~
 * ~~Docker~~
-* ~~Web interface (Spring Boot)~~
 * ~~Gradle~~
 
 ## Choices
