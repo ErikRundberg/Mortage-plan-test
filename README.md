@@ -3,7 +3,8 @@
 This application creates Customers from a text file.  
 The file contains customer name, total loan amount, interest rate and loan period.  
 All of the customers then get their monthly mortgage calculated.  
-There are a terminal- and web version. The web version also allows the user to put in their own values.  
+There is a terminal- and a web version. The web version also allows the user to put in their own values.  
+  
 The web version is also hosted on AWS.  
 
 ## Table of Contents  
