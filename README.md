@@ -70,6 +70,8 @@ Go to: http://localhost:8080
 >
 > [Github Issue](https://github.com/hamvocke/spring-testing/issues/3) [Stackoverflow](https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle)
 
+--------------------
+
 ### Docker Server
 
 ```docker
@@ -90,7 +92,8 @@ Go to: http://localhost:8080
 ### Name formatting
 I decided to keep `"Clarencé,Andersson"` as it was written instead of removing the quotation marks and the comma to show that I can handle them.
 
-In production I would have formatted it into `Clarencé Andersson` to keep it consistent with the other entries in prospects.txt, making it easier for database integration.
+In production I would have formatted it into `Clarencé Andersson` to keep it consistent with the other entries in prospects.txt, making it easier for database integration.  
+  
 
 ### Why Gradle?
 I chose Gradle over Maven mainly for their incremental build which makes rebuilding the application way faster as only changed files have to be rebuilt.
