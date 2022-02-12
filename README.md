@@ -2,6 +2,22 @@
 
 The application creates Customers from text file and calculates all the customers' monthly mortgage cost and presents it.  
 
+## Table of Contents  
+* [Technologies](https://github.com/Erru17/Mortage-plan-test#technologies)
+* Public Cloud Service (AWS)
+* Installation
+  * Run Program (Terminal)
+    * CMD (Windows)
+    * UNIX (Linux/Mac)
+  * Run Server
+    * CMD (Windows)
+    * UNIX (Linux/Mac)
+  * Docker Server
+* Future Plans
+* Choices
+  * Name formatting
+  * Why gradle?
+
 ## Technologies
 * Java
 * HTML / CSS
@@ -11,33 +27,32 @@ The application creates Customers from text file and calculates all the customer
 * Docker, Docker-compose
 * AWS - Elastic Beanstalk
 
-## AWS
+## Public Cloud Service (AWS)
 http://mortageplan-env.eba-jpr8vjbf.eu-north-1.elasticbeanstalk.com/  
 
 ## Installation
-Be in root folder
 
-### Run program (Terminal)
+### Run Program (Terminal)
 
-#### CMD
+#### CMD (Windows)
 
 ```cmd
 gradlew cli
 ```
-#### UNIX
+#### UNIX (Linux/Mac)
 
 ```bash
 ./gradlew cli
 ```
 
-### Run server (Browser)
+### Run Server (Browser)
 
-#### CMD
+#### CMD (Windows)
 
 ```cmd
 gradlew bootRun
 ```
-#### UNIX
+#### UNIX (Linux/Mac)
 
 ```bash
 ./gradlew bootRun
@@ -58,15 +73,15 @@ Go to: http://localhost:8080
 
 ## Future plans
 
-* Testing
-* ~~Web interface~~
-* ~~Amazon AWS~~
-* ~~Docker~~
-* ~~Gradle~~
+- [ ] Testing
+- [x] Web interface
+- [x] Amazon AWS
+- [x] Docker
+- [x] Gradle
 
 ## Choices
 
-### Name formatting from file
+### Name formatting
 I decided to keep `"Clarencé,Andersson"` as it was written instead of removing the quotation marks and the comma to show that I can handle them.
 
 In production I would have formatted it into `Clarencé Andersson` to keep it consistent with the other entries in prospects.txt, making it easier for database integration.
