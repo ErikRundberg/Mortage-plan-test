@@ -11,10 +11,11 @@
  */
 package com.bank;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // Create a list of customers from the file "src/main/resources/prospects.txt"
         ArrayList<Customer> customersList = CustomerFromFile.getCustomersList();
 

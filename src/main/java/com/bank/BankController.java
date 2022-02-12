@@ -1,5 +1,6 @@
 package com.bank;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -19,10 +20,11 @@ public class BankController {
 	 * Creates a list of Customers and then adds
 	 * all of the customers' presentations into
 	 * the ArrayList customerPresentations
+	 * @throws IOException
 	 * 
 	 */
 	@EventListener(ApplicationReadyEvent.class)
-	public void startUp() {
+	public void startUp() throws IOException {
 		// Create a list of customers from the file "src/main/resources/prospects.txt"
 		customersList = CustomerFromFile.getCustomersList();
 

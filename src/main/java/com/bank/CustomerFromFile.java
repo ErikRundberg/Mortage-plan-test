@@ -1,7 +1,8 @@
 package com.bank;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2022-02-08
  */
-public final class CustomerFromFile {
+public class CustomerFromFile {
 
     /**
      * Utility class - Can't be instantiated
@@ -31,18 +32,18 @@ public final class CustomerFromFile {
      * marks and lastly returns it in an ArrayList.
      * 
      * @return Returns ArrayList containing Customer objects
+     * @throws IOException
      * @exception FileNotFoundException on file missing error.
      * @see FileNotFoundException
      */
-    public static ArrayList<Customer> getCustomersList() {
+    public static ArrayList<Customer> getCustomersList() throws IOException{
         // List containing all customers as objects
         ArrayList<Customer> customers = new ArrayList<>();
 
-        try {
-            // Load file from /resources folder
-            File customersFile = new File(ClassLoader.getSystemClassLoader().getResource("./prospects.txt").getFile());
+        // Load file prospects.txt from /resources folder
+        try (InputStream in = CustomerFromFile.class.getResourceAsStream("/prospects.txt")){
             // Use charset UTF-8 because of "åäö" and "é"
-            Scanner customersScanner = new Scanner(customersFile, "UTF-8");
+            Scanner customersScanner = new Scanner(in, "UTF-8");
             // Get rid of header containing CSV-information
             customersScanner.nextLine();
             // Go through file line-by-line, create customers and add to ArrayList customers
