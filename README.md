@@ -10,7 +10,7 @@ The application creates Customers from text file and calculates all the customer
 
 ## Installation
 To run the application do the following:  
-Install Java JDK 11  
+Install Java JDK 8  
 Be in root folder  
 
 ### Run program (Terminal)
