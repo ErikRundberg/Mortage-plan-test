@@ -1,6 +1,10 @@
-# Mortage Plan code test
+# Mortage Plan - Code Test
 
-The application creates Customers from text file and calculates all the customers' monthly mortgage cost and presents it.  
+This application creates Customers from a text file.  
+The file contains customer name, total loan amount, interest rate and loan period.  
+All of the customers then get their monthly mortgage calculated.  
+There are a terminal- and web version. The web version also allows the user to put in their own values.  
+The web version is also hosted on AWS.  
 
 ## Table of Contents  
 * [Technologies](https://github.com/Erru17/Mortage-plan-test#technologies)
