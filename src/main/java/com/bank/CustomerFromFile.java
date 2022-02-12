@@ -1,13 +1,5 @@
-package com.bank;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
- * CustomerFromFile class
+ * CustomerFromFile
  * 
  * The CustomerFromFile class opens up the file prospects.txt and
  * returns all the customers in an ArrayList.
@@ -16,6 +8,15 @@ import java.util.Scanner;
  * @version 1.1
  * @since 2022-02-12
  */
+
+package com.bank;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class CustomerFromFile {
 
     /**
