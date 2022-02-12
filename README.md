@@ -59,7 +59,7 @@ Go to: http://localhost:8080
 ## Future plans
 
 * Testing
-* Web interface
+* ~~Web interface~~
 * ~~Amazon AWS~~
 * ~~Docker~~
 * ~~Gradle~~
