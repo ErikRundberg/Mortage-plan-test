@@ -1,5 +1,6 @@
 # Mortage Plan - Code Test
-[![CircleCI](https://circleci.com/gh/Erru17/Mortage-plan-test.svg?style=shield&circle-token=c3284a727732685a844ed772b8d55eb1ad060d2c)](https://circleci.com/)
+[![CircleCI](https://circleci.com/gh/Erru17/Mortage-plan-test.svg?style=shield&circle-token=c3284a727732685a844ed772b8d55eb1ad060d2c)](https://circleci.com/)  
+[![Build Status](https://app.travis-ci.com/Erru17/Mortage-plan-test.svg?token=oJPfynLyLg2LstTx3FPp&branch=main)](https://app.travis-ci.com/Erru17/Mortage-plan-test)
 
 This application creates Customers from a text file.  
 The file contains customer name, total loan amount, interest rate and loan period.  
