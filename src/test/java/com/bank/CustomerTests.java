@@ -11,6 +11,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
@@ -93,8 +95,24 @@ class CustomerTests {
 	}
 
 	@Test
-	@DisplayName("Try printing all information about customer")
-	void printCustomerInfo() {
+	@DisplayName("Try printing all information about customer (UNIX)")
+	@EnabledOnOs({ OS.LINUX, OS.MAC })
+	void printCustomerInfoUNIX() {
+		customer.printCustomerInfo();
+		String outputs[] = outputStreamCaptor.toString().trim().split("\n");
+
+		assertEquals("Prospect #1", outputs[0]);
+		assertEquals("Name: Test Testsson", outputs[1]);
+		assertEquals("Total loan (€): 1000.0", outputs[2]);
+		assertEquals("Interest rate (%): 1.2", outputs[3]);
+		assertEquals("Total loan period (years): 2", outputs[4]);
+		assertEquals("Current monthly mortgage: 42.189495511012254", outputs[5]);
+	}
+
+	@Test
+	@DisplayName("Try printing all information about customer (Windows)")
+	@EnabledOnOs({ OS.WINDOWS })
+	void printCustomerInfoWindows() {
 		customer.printCustomerInfo();
 		String outputs[] = outputStreamCaptor.toString().trim().split("\r\n");
 
