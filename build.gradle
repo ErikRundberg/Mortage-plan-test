@@ -9,12 +9,19 @@ application {
 	mainClass = 'com.bank.ServingWebContentApplication'
 }
 
-// task cli(type: JavaExec) {
-// 	group = "Execution"
-// 	description = "Run the CLI main class"
-// 	classpath = sourceSets.main.runtimeClasspath
-// 	main = "com.bank.App"
-// }
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
+}
+
+task cli(type: JavaExec) {
+	group = "Execution"
+	description = "Run the CLI main class"
+	classpath = sourceSets.main.runtimeClasspath
+	main = "com.bank.App"
+}
 
 group = 'com'
 version = '0.0.1-SNAPSHOT'
