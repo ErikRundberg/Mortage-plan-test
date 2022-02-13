@@ -9,12 +9,12 @@ application {
 	mainClass = 'com.bank.ServingWebContentApplication'
 }
 
-task cli(type: JavaExec) {
-	group = "Execution"
-	description = "Run the CLI main class"
-	classpath = sourceSets.main.runtimeClasspath
-	main = "com.bank.App"
-}
+// task cli(type: JavaExec) {
+// 	group = "Execution"
+// 	description = "Run the CLI main class"
+// 	classpath = sourceSets.main.runtimeClasspath
+// 	main = "com.bank.App"
+// }
 
 group = 'com'
 version = '0.0.1-SNAPSHOT'
