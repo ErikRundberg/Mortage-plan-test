@@ -87,6 +87,7 @@ Go to: http://localhost:8080
 
 There are two types of tests implemented in this project, continous integration tests and unit tests.  
 The continous integration tests can be seen at the top of the README file, they're circle.ci and travis.ci.  
+  
 To see the unit tests you can access the following folder:  
 `Mortage-plan-test\build\reports\tests\test`  
   
