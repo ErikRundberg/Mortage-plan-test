@@ -1,4 +1,5 @@
 # Mortage Plan - Code Test
+[![CircleCI](https://circleci.com/gh/erru17/mortgage-plan-test.svg?style=svg&circle-token=c3284a727732685a844ed772b8d55eb1ad060d2c)](https://circleci.com/)
 
 This application creates Customers from a text file.  
 The file contains customer name, total loan amount, interest rate and loan period.  
