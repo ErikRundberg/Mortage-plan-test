@@ -18,6 +18,9 @@ The web version is also hosted on AWS.
     * [CMD (Windows)](https://github.com/Erru17/Mortage-plan-test#cmd-windows-1)
     * [UNIX (Linux/Mac)](https://github.com/Erru17/Mortage-plan-test#unix-linuxmac-1)
   * [Docker Server](https://github.com/Erru17/Mortage-plan-test#docker-server)
+* [Testing](https://github.com/Erru17/Mortage-plan-test#testing)
+  * [CMD (Windows)](https://github.com/Erru17/Mortage-plan-test#cmd-windows-2)
+  * [UNIX (Linux/Mac)](https://github.com/Erru17/Mortage-plan-test#unix-linuxmac-2)
 * [Future Plans](https://github.com/Erru17/Mortage-plan-test#future-plans)
 * [Choices](https://github.com/Erru17/Mortage-plan-test#choices)
   * [Name formatting](https://github.com/Erru17/Mortage-plan-test#name-formatting)
@@ -80,9 +83,27 @@ docker-compose up
 ```
 Go to: http://localhost:8080
 
+## Testing
+
+There are two types of tests implemented in this project, continous integration tests and unit tests.  
+The continous integration tests can be seen at the top of the README file, they're circle.ci and travis.ci.  
+To see the unit tests you can access the following folder:  
+`Mortage-plan-test\build\reports\tests\test`  
+  
+If you're unable to see the folder, use the command:
+### CMD (Windows)
+```cmd
+gradlew test
+```
+
+### UNIX (Linux/Mac)
+```bash
+gradlew test
+```
+
 ## Future plans
 
-- [ ] Testing
+- [x] Testing
 - [x] Web interface
 - [x] Amazon AWS
 - [x] Docker
