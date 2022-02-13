@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -34,41 +35,56 @@ class CustomerTests {
 	}
 
 	@Test
+	@DisplayName("Assert customer is an instance of Customer")
 	void isCustomer() {
 		assertTrue(customer instanceof Customer);
 	}
 
 	@Test
+	@DisplayName("Ensure that you can access prospectNumber")
 	void getProspectNumber() {
 		assertEquals(1, customer.getNumber());
 	}
 
 	@Test
+	@DisplayName("Ensure that you can access customerName")
 	void getName() {
 		assertEquals("Test Testsson", customer.getName());
 	}
 
 	@Test
+	@DisplayName("Ensure that you can access customerLoan")
 	void getLoan() {
 		assertEquals(1000, customer.getLoan());
 	}
 
 	@Test
+	@DisplayName("Ensure that you can access customerInterest")
 	void getInterest() {
 		assertEquals(1.2, customer.getInterest());
 	}
 
 	@Test
+	@DisplayName("Ensure that you can access customerYears")
 	void getYears() {
 		assertEquals(2, customer.getYears());
 	}
 
 	@Test
+	@DisplayName("Calculate monthly mortgage")
+	void calculateMonthlyMortgage() {
+		customer.calculateMonthlyMortgage();
+		assertEquals(42.189495511012254, customer.getMortgage());
+	}
+
+	@Test
+	@DisplayName("Customer's monthly mortgage is 0 before method")
 	void preCalcMortgage() {
 		assertEquals(0.0, customer.getMortgage());
 	}
 
 	@Test
+	@DisplayName("Customer's monthly mortgage is calculated after method")
 	void postCalcMortgage() {
 		customer.calculateMonthlyMortgage();
 		// Using String.format to round down number as intended
@@ -77,6 +93,7 @@ class CustomerTests {
 	}
 
 	@Test
+	@DisplayName("Try printing all information about customer")
 	void printCustomerInfo() {
 		customer.printCustomerInfo();
 		String outputs[] = outputStreamCaptor.toString().trim().split("\r\n");
@@ -88,6 +105,7 @@ class CustomerTests {
 		assertEquals("Total loan period (years): 2", outputs[4]);
 		assertEquals("Current monthly mortgage: 42.189495511012254", outputs[5]);
 	}
+
 
 	@AfterEach
 	public void tearDown() {
