@@ -10,8 +10,8 @@
  * and stores it in the customer variable customerMonthlyMortgage.
  * 
  * @author Erik Rundberg
- * @version 1.0
- * @since 2022-02-08
+ * @version 1.1
+ * @since 2022-02-13
  */
 
 package com.bank;
@@ -47,6 +47,68 @@ public class Customer {
         // Customer gets given the latest number and then increments by 1
         this.prospectNumber = Customer.totalProspects;
         Customer.totalProspects++;
+    }
+
+    /**
+     * Resets the totalProspect number to 1
+     * Mainly used for testing
+     */
+    public static void resetTotalProspects() {
+        totalProspects = 1;
+    }
+
+    /**
+     * Getter for prospectNumber
+     * 
+     * @return Customer instance's prospectNumber
+     */
+    public int getNumber() {
+        return this.prospectNumber;
+    }
+
+    /**
+     * Getter for customerName
+     * 
+     * @return Customer instance's name
+     */
+    public String getName() {
+        return this.customerName;
+    }
+
+    /**
+     * Getter for customerLoan
+     * 
+     * @return Customer instance's total loan
+     */
+    public Double getLoan() {
+        return this.customerLoan;
+    }
+
+    /**
+     * Getter for customerInterest
+     * 
+     * @return Customer instance's interest rate
+     */
+    public Double getInterest() {
+        return this.customerInterest;
+    }
+
+    /**
+     * Getter for customerYears
+     * 
+     * @return Customer instance's loan period (years)
+     */
+    public int getYears() {
+        return this.customerYears;
+    }
+
+    /**
+     * Getter for customerMonthlyMortgage
+     * 
+     * @return Customer instance's monthly mortgage
+     */
+    public Double getMortgage() {
+        return this.customerMonthlyMortgage;
     }
 
     /**
